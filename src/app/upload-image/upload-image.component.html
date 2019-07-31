@@ -1,0 +1,19 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <div class="card-panel teal lighten-2">
+            </div>
+            <form #imageForm=ngForm (ngSubmit)="OnSubmit(Caption,Image)">
+                <div class="row">
+                    <div class="input-field col-md-3">
+                        <input type="text" #Caption ngModel name="Caption" id="Caption" required>
+                        <label for="Caption">أسم الصورة</label>
+                    </div>
+                </div>
+                <img [src]="imageUrl" style="width:250px;height:200px">
+                <input type="file" #photo accept="image/*" (change)="handleFileInput($event.target.files)">
+                <button type="submit" class="btn-large btn-submit" [disabled]="Image.value=='' || !imageForm.valid">أضافة</button>
+            </form>
+        </div>
+    </div>
+</div> -->

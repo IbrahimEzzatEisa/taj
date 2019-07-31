@@ -1,0 +1,32 @@
+<div>
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" بحث">
+
+</div>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <th></th>
+        <th>أنتهاء الصلاحية</th>
+        <th>صورة المنتج</th>
+        <th>السعر</th>
+        <th>اسم المنتج</th>
+        <th>م</th>
+
+    </thead>
+    <tbody class="scrollit">
+
+        <tr *ngFor="let item of service.list">
+            <td>
+                <button (click)="onDelete(item.ItemId)" class="btn btn-sm btn-outline-danger">X</button>
+            </td>
+            <td (click)="populateForm(item)">{{item.ExpireDate | date:'yyyy/MM/dd'}}</td>
+            <td (click)="populateForm(item)">{{item.Photo }}</td>
+            <td (click)="populateForm(item)">{{item.Price}}</td>
+            <td (click)="populateForm(item)">{{item.ItemName}}</td>
+            <td (click)="populateForm(item)">{{item.ItemId}} </td>
+
+        </tr>
+
+
+
+    </tbody>
+</table>

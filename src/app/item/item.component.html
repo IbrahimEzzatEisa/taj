@@ -1,0 +1,54 @@
+<div class="pos-f-t shadow">
+    <div class="collapse shadow" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+            <h5 class="text-white h4 text-center"> الأصناف</h5>
+
+
+
+            <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+                <input type="hidden" name="ItemId" #ItemId="ngModel" [(ngModel)]="service.formData.ItemId">
+                <div class="form-row justify-content-center">
+
+                    <div class="form-group  col-3">
+                        <label>تاريخ أنتهاء الصلاحية</label>
+                        <input type="date" name="ExpireDate" #ExpireDate="ngModel" [(ngModel)]="service.formData.ExpireDate" class="form-control" required>
+                        <div class="validation-error" *ngIf="ExpireDate.invalid && ExpireDate.touched">يجب أدخال البيانات</div>
+
+                    </div>
+                    <div class="form-group col-2">
+                        <label>السعر</label>
+                        <input name="Price" #Price="ngModel" [(ngModel)]="service.formData.Price" class="form-control" required>
+                        <div class="validation-error" *ngIf="Price.invalid && Price.touched">يجب أدخال البيانات</div>
+
+                    </div>
+                    <div class="form-group col-5">
+                        <label class="text-center">اسم الصنف</label>
+                        <input name="ItemName" #ItemName="ngModel" [(ngModel)]="service.formData.ItemName" class="form-control" required>
+                        <div class="validation-error" *ngIf="ItemName.invalid && ItemName.touched"> يجب أدخال البيانات</div>
+                    </div>
+                    <!-- <div class="form-group col-2">
+                        <label>مسلسل </label>
+                        <input name="ItemId" #ItemId="ngModel" [(ngModel)]="service.formData.ItemId" class="form-control" required>
+                        <div class="validation-error" *ngIf="ItemId.invalid && ItemId.touched">يجب أدخال البيانات</div>
+                    </div> -->
+
+                </div>
+                <div class="form-group">
+                    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">أضافة</button>
+                </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+
+    <nav class="navbar navbar-dark bg-dark navbar-right">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span> <strong>بيانات الاصناف</strong></span>
+        </button>
+
+    </nav>
+
+</div>
